@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos2.css">
+</head>
+<body>
+    <h2>CALCULADORA INDICE DE MASA CORPORAL (IMC)</h2>
+    <form>
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" step="0.1"><br><br>
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" step="0.01"><br><br>
+        <label>Sexo:</label><br>
+        <input type="radio" name="sexo" id="hombre"> Hombre<br>
+        <input type="radio" name="sexo" id="mujer"> Mujer<br><br>
+        <button type="button" onclick="calcularIMC()">Calcular</button>
+        <button type="reset">Limpiar</button><br><br>
+        <label for="imc">IMC:</label>
+        <input type="text" id="imc" readonly>
+    </form>
+    <p id="estado"></p>
+    <script>
+        function calcularIMC() {
+            let peso = parseFloat(document.getElementById("peso").value);
+            let altura = parseFloat(document.getElementById("altura").value);
+            let imc = peso / (altura * altura);
+            document.getElementById("imc").value = imc.toFixed(2);
+            if (document.getElementById("hombre").checked) {
+                if (imc < 20) {
+                    document.getElementById("estado").textContent = "Bajo peso";
+                } else if (imc <= 25) {
+                    document.getElementById("estado").textContent = "Normal";
+                } else {
+                    document.getElementById("estado").textContent = "Sobrepeso";
+                }
+            } else if (document.getElementById("mujer").checked) {
+                if (imc < 19) {
+                    document.getElementById("estado").textContent = "Bajo peso";
+                } else if (imc <= 24) {
+                    document.getElementById("estado").textContent = "Normal";
+                } else {
+                    document.getElementById("estado").textContent = "Sobrepeso";
+                }
+            } else {
+                alert("Seleccione el sexo");
+            }
+        }
+    </script>
+</body>
+</html>

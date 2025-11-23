@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos2.css">
+</head>
+<body>
+    <h2>REGISTRO DE DATOS</h2>
+    <form>
+        <label for="">Nombre:</label>
+        <input id="nombre"><br><br>
+        <label for="">CI:</label>
+        <input id="ci"><br><br>
+        <label for="">Sexo:</label><br><br>
+        <input type="radio" name="sexo" value="Femenino">Femenino<br><br>
+        <input type="radio" name="sexo" value="Masculino">Masculino<br><br>
+        <label for="">Estado Civil:</label><br>
+        <select id="estado">
+            <option value="Soltero">Soltero</option>
+            <option value="Soltera">Soltera</option>
+            <option value="Casado">Casado</option>
+            <option value="Casada">Casada</option>
+            <option value="Divorciado">Divorciado</option>
+            <option value="Divorciada">Divorciada</option>
+            <option value="Viudo">Viudo</option>
+            <option value="Viuda">Viuda</option>
+        </select><br><br>
+        <button type="button" onclick="registrarDatos()">Registrar</button>
+        <button type="reset">Limpiar</button><br><br>
+        <textarea id="datos" rows="10" cols="30" readonly></textarea>
+    </form>
+    <script>
+        function registrarDatos() {
+            let nombre = document.getElementById("nombre").value;
+            let ci = document.getElementById("ci").value;
+            let sexoSelec = document.querySelector('input[name="sexo"]:checked');
+            let sexo = sexoSelec ? sexoSelec.value : "No seleccionado";
+            let estado = document.getElementById("estado").value;
+            document.getElementById("datos").value = `Nombre: ${nombre}
+                                                        CI: ${ci}
+                                                        Sexo: ${sexo}
+                                                        Estado civil: ${estado}`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos2.css">
+</head>
+<body>
+    <h2>PASATIEMPOS FAVORITOS</h2>
+    <form>
+        <label for="">Selecciona tus pasatiempos favoritos:</label><br><br>
+        <input type="checkbox" name="pasatiempos" value="Hacer deporte">Hacer deporte<br>
+        <input type="checkbox" name="pasatiempos" value="Escuchar música">Escuchar música<br>
+        <input type="checkbox" name="pasatiempos" value="Leer libros">Leer libros<br>
+        <input type="checkbox" name="pasatiempos" value="Bailar">Bailar<br>
+        <input type="checkbox" name="pasatiempos" value="Ver peliculas">Ver peliculas<br>
+        <input type="checkbox" name="pasatiempos" value="Jugar videojuegos">Jugar videojuegos<br>
+        <input type="checkbox" name="pasatiempos" value="Cantar">Cantar<br><br>
+        <button type="button" onclick="seleccionPasatiempos()">Aceptar</button>
+        <button type="reset">Limpiar</button><br><br>
+        <textarea id="seleccionado" rows="10" readonly></textarea>
+    </form>
+    <script>
+        function seleccionPasatiempos() {
+            let p = document.getElementsByName("pasatiempos");
+            let s = "";
+            for (let i = 0; i < p.length; i++) {
+                if (p[i].checked) {
+                    s = s + p[i].value + "\n";
+                }
+            }
+            document.getElementById("seleccionado").value = s;
+        }
+    </script>
+</body>
+</html>

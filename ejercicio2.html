@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos2.css">
+</head>
+<body>
+    <h2>CALCULADORA DE RAÍCES</h2>
+    <form>
+        <label for="">Coeficiente a:</label>
+        <input type="number" id="a" required><br><br>
+        <label for="">Coeficiente b:</label>
+        <input type="number" id="b" required><br><br>
+        <label for="">Coeficiente c:</label>
+        <input type="number" id="c" required><br><br>
+        <button type="button" onclick="calcularRaices()">Calcular raíces</button><br><br>
+        <label for="">Raíz x1:</label>
+        <input type="text" id="r1" readonly><br><br>
+        <label for="">Raíz x2:</label>
+        <input type="text" id="r2" readonly><br><br>
+    </form>
+    <script>
+        function calcularRaices() {
+            let a = parseFloat(document.getElementById('a').value);
+            let b = parseFloat(document.getElementById('b').value);
+            let c = parseFloat(document.getElementById('c').value);
+            let r1 = ((-b + Math.sqrt(b**2 - 4*a*c)) / (2*a)).toFixed(3);
+            let r2 = ((-b - Math.sqrt(b**2 - 4*a*c)) / (2*a)).toFixed(3);
+            document.getElementById('r1').value = r1;
+            document.getElementById('r2').value = r2;
+        }
+    </script>
+</body>
+</html>

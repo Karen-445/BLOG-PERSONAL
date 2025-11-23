@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos2.css">
+</head>
+<body>
+    <h2>CALCULA NOTA FINAL</h2>
+    <form>
+        <label for="">Nombre:</label>
+        <input type="text" id="nom" required><br><br>
+        <label for="">Nota primer bimestre:</label>
+        <input type="number" id="n1"><br><br>
+        <label for="">Nota segundo bimestre:</label>
+        <input type="number" id="n2"><br><br>
+        <label for="">Nota tercer bimestre:</label>
+        <input type="number" id="n3"><br><br>
+        <label for="">Nota cuarto bimestre:</label>
+        <input type="number" id="n4"><br><br>
+        <button type="button" onclick="calcularNotas()">Aceptar</button>
+        <button type="reset">Borrar</button><br><br>
+        <label for="">Nota final:</label>
+        <input type="number" id="notaFinal" readonly>
+    </form>
+    <p id="resultado"></p>
+    <script>
+        function calcularNotas() {
+            let nom = document.getElementById("nom").value;
+            let n1 = parseFloat(document.getElementById("n1").value);
+            let n2 = parseFloat(document.getElementById("n2").value);
+            let n3 = parseFloat(document.getElementById("n3").value);
+            let n4 = parseFloat(document.getElementById("n4").value);
+            let p = (n1 + n2 + n3 + n4) / 4;
+            document.getElementById("notaFinal").value = p.toFixed(0);
+            if (p >= 51) {
+                document.getElementById("resultado").textContent = "Aprobado";
+            } else {
+                document.getElementById("resultado").textContent = "Reprobado";
+            }
+        }
+    </script>
+</body>
+</html>

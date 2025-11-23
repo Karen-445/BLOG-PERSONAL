@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos2.css">
+</head>
+<body>
+    <h2>AREA Y VOLUMEN DE UNA ESFERA</h2>
+    <form>
+        <label for="">Radio:</label>
+        <input type="number" id="radio" required><br><br>
+        <label for="">Area:</label>
+        <input type="number" id="area" readonly><br><br>
+        <label for="">Volumen:</label>
+        <input type="number" id="volumen" readonly><br><br>
+        <button type="button" onclick="areaVolumenEsfera()">Calcular</button>
+        <button type="reset">Limpiar</button>
+    </form>
+    <script>
+        function areaVolumenEsfera() {
+            let r = parseFloat(document.getElementById("radio").value);
+            if (r > 0){
+                let a = 4 * Math.PI * Math.pow(r, 2);
+                let v = (4 / 3) * Math.PI * Math.pow(r, 3);
+                document.getElementById("area").value = a.toFixed(2);
+                document.getElementById("volumen").value = v.toFixed(2);
+            } 
+            else{
+                alert("Radio incorrecto");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eef7f3;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+h2 {
+    color: #2d5f4d;
+    margin-bottom: 12px;
+    text-align: center;
+}
+form {
+    background: #ffffff;
+    padding: 20px;
+    width: 380px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.12);
+    border-left: 5px solid #3c8d70;
+    margin-left: auto;
+    margin-right: auto;
+}
+label.field-label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    color: #2d5f4d;
+}
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], select, textarea {
+    width: 95%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #9dbfb2;
+    border-radius: 6px;
+    background: #ffffff;
+    font-size: 14px;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: #3c8d70;
+    box-shadow: 0 0 4px rgba(60,141,112,0.4);
+    outline: none;
+}
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+button {
+    width: 47%;
+    padding: 10px;
+    margin-top: 15px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 6px;
+    background: #3c8d70;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+button[type="reset"] {
+    background: #bb4c4c;
+}
+button:hover {
+    opacity: 0.88;
+}
+.options {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.options label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.options input[type="checkbox"], .options input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #3c8d70;
+    margin: 0;
+    flex-shrink: 0;
+}
+.options.inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+}
+.label-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
